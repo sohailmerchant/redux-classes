@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Configuration from "../config/default";
 
 export const usersState = createSlice({
   name: "users",
@@ -11,6 +12,7 @@ export const usersState = createSlice({
   reducers: {
     getUsers: (state) => {
       // api call return response
+      // `http://www.omdbapi.com/?apikey=${Configuration.MoviesApiKey}&s=harry`
       const data = ["suleman", "fardeen", "sohail", "ilyas"];
       const visitors = ["suleman", "fardeen", "sohail", "ilyas"];
       state.visitors = visitors;

@@ -7,12 +7,8 @@ export const moviesState = createSlice({
     movies: [],
   },
   reducers: {
-    getMovies: async (state) => {
-      const resp = await fetch(
-        `http://www.omdbapi.com/?apikey=${Configuration.MoviesApiKey}&s=harry`
-      );
-      const responseJson = await resp.json();
-      state.movies = payload.Search;
+    getMovies: (state, { payload }) => {
+      state.movies = payload;
     },
   },
 });

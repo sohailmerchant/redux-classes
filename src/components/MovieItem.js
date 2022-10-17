@@ -1,14 +1,14 @@
-const MovieItem = () => {
+const MovieItem = ({ movie }) => {
   return (
-    <div className="w-1/4 border bg-slate-400 text-white font-bold text-lg cursor-pointer">
-      <img
-        src="https://m.media-amazon.com/images/M/MV5BMjE0ODEwNjM2NF5BMl5BanBnXkFtZTcwMjU2Mzg3NA@@._V1_SX300.jpg"
-        className="w-full"
-      />
-      <h1>When Harry Met Sally</h1>
+    <div
+      className="w-1/7 border bg-slate-400 text-white font-bold text-lg cursor-pointer float-left m-1 test"
+      style={{ height: "677px" }}
+    >
+      <img src={`${movie.Poster}`} className="w-full" />
+      <h1>{movie.Title}</h1>
       <div>
         <span>Year: </span>
-        <span>1998</span>
+        <span>{movie.Year}</span>
       </div>
     </div>
   );
