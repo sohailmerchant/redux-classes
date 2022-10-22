@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "suleman",
+      "password": "suleman",
+      "email": "suleman@email.com"
+    },
+    {
+      "id": 2,
+      "name": "khan",
+      "password": "ilyas",
+      "email": "ilyas@email.com"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "suleman",
+      "password": "suleman",
+      "email": "suleman@email.com"
+    },
+    {
+      "id": 2,
+      "name": "khan",
+      "password": "ilyas",
+      "email": "ilyas@email.com"
+    }
+  ]
+}
