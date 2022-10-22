@@ -91,10 +91,10 @@ function Registration() {
               className=" text-white px-4 py-2 bg-red-600 mr-2 hover:bg-red-800 w-25"
             >
               <div className="">
-                <div className="float-left inline-block w-10">
+                <div className="float-left inline-block w-6">
                   <Icon name="check" />
                 </div>
-                <span className="inline-block float-left w-40">
+                <span className="inline-block float-left w-26 ">
                   Create account
                 </span>
               </div>
