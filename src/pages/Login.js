@@ -23,18 +23,14 @@ function Login() {
       password: Yup.string().required("Password is Required"),
     }),
     onSubmit: (values) => {
-      console.log("Form submitted");
-      delete values.cPassword
-      console.log("new", values)
       const url = `http://localhost:3000/users?username=${values.username}&&password=${values.password}`
-      console.log(url)
-
+      console.log("Form submitted", url)
       fetch(url, {
         method: 'GET',
       })
         .then((response) => response.json())
         .then((data) => {
-          data.length >= 1 ? console.log('Success:', data) : console.log('no user found')
+          data.length >= 1 ? window.location.replace("/?" + data[0].username) && console.log('Success: ', data) : console.log('no user found')
         })
         .catch((error) => {
           console.error('Error:', error);
