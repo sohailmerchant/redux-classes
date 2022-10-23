@@ -30,17 +30,39 @@ function Registration() {
     onSubmit: (values) => {
       console.log("Form submitted");
       console.log(values);
+      delete values.cPassword
+      console.log("new", values)
+      fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Success:', data);
+          formik.resetForm();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     },
   });
 
-  console.log(formik.errors);
+  //console.log(formik.errors);
 
   return (
     <MainLayout>
+      {console.log(formik.errors)}
+
       <div className="App pt-10">
         <h1 className="text-4xl font-bold mb-10">Registration</h1>
+
         <form onSubmit={formik.handleSubmit}>
           <div>
+
+
             <label className="block">Username</label>
             <input
               type="text"
@@ -50,7 +72,8 @@ function Registration() {
               onBlur={formik.handleBlur}
               value={formik.values.username}
             />
-            <p>Username is</p>
+            {formik.errors.username && <p className="text-red-500 text-sm">{formik.errors.username}</p>}
+
           </div>
           <div>
             <label className="block">Email</label>
@@ -62,6 +85,8 @@ function Registration() {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
+            {formik.errors.email && <p className="text-red-500 text-sm">{formik.errors.email}</p>}
+
           </div>
           <div>
             <label className="block">Password</label>
@@ -73,6 +98,8 @@ function Registration() {
               onBlur={formik.handleBlur}
               value={formik.values.password}
             />
+            {formik.errors.password && <p className="text-red-500 text-sm">{formik.errors.password}</p>}
+
           </div>
           <div>
             <label className="block">Confirm Password</label>
@@ -84,6 +111,8 @@ function Registration() {
               onBlur={formik.handleBlur}
               value={formik.values.cPassword}
             />
+            {formik.errors.cPassword && <p className="text-red-500 text-sm">{formik.errors.cPassword}</p>}
+
           </div>
           <div>
             <button
@@ -101,8 +130,8 @@ function Registration() {
             </button>
           </div>
         </form>
-      </div>
-    </MainLayout>
+      </div >
+    </MainLayout >
   );
 }
 

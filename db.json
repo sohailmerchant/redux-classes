@@ -11,6 +11,31 @@
       "name": "khan",
       "password": "ilyas",
       "email": "ilyas@email.com"
+    },
+    {
+      "username": "Sohail",
+      "email": "sohailsmerchant@gmail.com",
+      "password": "Sohail",
+      "cPassword": "Sohail",
+      "id": 3
+    },
+    {
+      "username": "Sohail",
+      "email": "sohailsmerchant@gmail.com",
+      "password": "Sohail",
+      "id": 4
+    },
+    {
+      "username": "Sohail",
+      "email": "sohailsmerchant@gmail.com",
+      "password": "Sohail",
+      "id": 5
+    },
+    {
+      "username": "ilyasaslam",
+      "email": "ilyas@gmail.com",
+      "password": "Ilyas",
+      "id": 6
     }
   ],
   "categories": [
